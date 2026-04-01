@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Typography tokens
+   Font stacks, font sizes, and leading registered with @theme.
+   Apply with Tailwind utility classes: font-sans, font-mono, text-xs, etc.
+   ========================================================================== */
+
+@theme inline {
+  /* --- Font families --- */
+  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
+
+  /* --- Font sizes (label / value) ---
+     These extend Tailwind's default scale.
+     Usage: text-display, text-body-lg, etc.
+   */
+  --font-size-display: 3.5rem;
+  --font-size-display--line-height: 1.1;
+  --font-size-display--letter-spacing: -0.025em;
+
+  --font-size-headline: 2.25rem;
+  --font-size-headline--line-height: 1.2;
+  --font-size-headline--letter-spacing: -0.02em;
+
+  --font-size-title: 1.5rem;
+  --font-size-title--line-height: 1.35;
+  --font-size-title--letter-spacing: -0.015em;
+
+  --font-size-body-lg: 1.125rem;
+  --font-size-body-lg--line-height: 1.6;
+
+  --font-size-body: 1rem;
+  --font-size-body--line-height: 1.6;
+
+  --font-size-body-sm: 0.875rem;
+  --font-size-body-sm--line-height: 1.5;
+
+  --font-size-caption: 0.75rem;
+  --font-size-caption--line-height: 1.4;
+}

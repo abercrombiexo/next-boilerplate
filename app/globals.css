@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Next.js CSS entry point
+   Delegates to the modular CSS architecture in src/css/.
+
+   Edit the individual files in src/css/ instead of this file:
+     src/css/app.css           <- Primary entry point
+     src/css/theme/colors.css  <- Brand palette, semantic colors
+     src/css/theme/typography.css <- Font stacks, sizes, leading
+     src/css/theme/spacing.css <- Spacing scale, radii, breakpoints
+     src/css/utilities/components.css <- Custom @utility classes
+   ========================================================================== */
+
+@import '../src/css/app.css';
