@@ -1,0 +1,11 @@
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+
+@theme inline {
+  --breakpoint-xs: 20rem;
+}
+
+@import './theme/colors.css';
+@import './theme/typography.css';
