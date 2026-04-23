@@ -1,43 +1,26 @@
 /* ==========================================================================
    Typography tokens
-   Font stacks, font sizes, and leading registered with @theme.
-   Apply with Tailwind utility classes: font-sans, font-mono, text-xs, etc.
+   Font stacks and fluid type scale registered with @theme.
+   Use directly as Tailwind utilities: font-sans, text-body-16, text-heading-48, etc.
    ========================================================================== */
 
-
 @theme {
-  /* --- Font families --- */
   --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
 
-  --text-body-10: clamp(0.625rem, 0.52rem + 0.52vw, 0.875rem); 
-  --text-body-16: clamp(1rem, 0.875rem + 0.63vw, 1.25rem);    
-  --text-body-20: clamp(1.25rem, 1rem + 1.25vw, 1.75rem);    
+  /* Body */
+  --text-body-10: clamp(0.625rem, 0.52rem + 0.52vw, 0.875rem);
+  --text-body-16: clamp(1rem, 0.875rem + 0.63vw, 1.25rem);
+  --text-body-20: clamp(1.25rem, 1rem + 1.25vw, 1.75rem);
 
-  /* --- Label Scale (8px to 24px) --- */
+  /* Labels */
   --text-label-8:  clamp(0.5rem, 0.45rem + 0.25vw, 0.625rem);
   --text-label-12: clamp(0.75rem, 0.65rem + 0.5vw, 0.9375rem);
   --text-label-24: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
 
-  /* --- Heading Scale (18px to 72px) --- */
+  /* Headings */
   --text-heading-18: clamp(1.125rem, 0.95rem + 0.8vw, 1.5rem);
   --text-heading-32: clamp(2rem, 1.5rem + 2.5vw, 3rem);
   --text-heading-48: clamp(3rem, 2.25rem + 3.75vw, 4.5rem);
   --text-heading-72: clamp(4.5rem, 3.5rem + 5vw, 6.5rem);
 }
-
-
-
-.body-16 { @apply text-body-16; }
-.body-20 { @apply text-body-20; }
-
-/* Label Classes */
-.label-8  { @apply text-label-8; }
-.label-12 { @apply text-label-12; }
-.label-24 { @apply text-label-24; }
-
-/* Heading Classes */
-.heading-18 { @apply text-heading-18; }
-.heading-32 { @apply text-heading-32; }
-.heading-48 { @apply text-heading-48; }
-.heading-72 { @apply text-heading-72; }

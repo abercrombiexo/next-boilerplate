@@ -2,7 +2,31 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function Hero() {
+type HeroProps = {
+  headline?: string | null
+  subheadline?: string | null
+  ctaLabel?: string | null
+  ctaHref?: string | null
+  secondaryCtaLabel?: string | null
+  secondaryCtaHref?: string | null
+  [key: string]: unknown
+}
+
+export function Hero({
+  headline,
+  subheadline,
+  ctaLabel,
+  ctaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+}: HeroProps = {}) {
+  const resolvedHeadline = headline ?? "Build faster. Ship with confidence."
+  const resolvedSubheadline = subheadline ?? "The modern platform for teams who want to move fast without breaking things. Start building today with our powerful developer tools."
+  const resolvedCtaLabel = ctaLabel ?? "Get Started"
+  const resolvedCtaHref = ctaHref ?? "#signup"
+  const resolvedSecondaryCtaLabel = secondaryCtaLabel ?? "View Documentation"
+  const resolvedSecondaryCtaHref = secondaryCtaHref ?? "#docs"
+
   return (
     <section className="relative flex min-h-[calc(100vh-4rem)] items-start  overflow-hidden ">
       {/* Subtle grid pattern */}
@@ -26,25 +50,25 @@ export function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-          Build faster. Ship with confidence.
+        <h1 className="text-balance text-heading-72 font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          {resolvedHeadline}
         </h1>
 
         {/* Subheading */}
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
-          The modern platform for teams who want to move fast without breaking things. Start building today with our powerful developer tools.
+          {resolvedSubheadline}
         </p>
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Button size="lg" asChild>
-            <Link href="#signup">
-              Get Started
+            <Link href={resolvedCtaHref}>
+              {resolvedCtaLabel}
               <ArrowRight className="size-4" />
             </Link>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <Link href="#docs">View Documentation</Link>
+            <Link href={resolvedSecondaryCtaHref}>{resolvedSecondaryCtaLabel}</Link>
           </Button>
         </div>
 

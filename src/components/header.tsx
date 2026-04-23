@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import ShinyText from "./ShinyText/ShinyText"
 
@@ -14,10 +15,13 @@ const navLinks = [
 ]
 
 export function Header() {
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  if (pathname.startsWith('/studio')) return null
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border backdrop-blur-md bg-black ">
+    <header className="sticky top-0 z-50 w-full border-b border-border backdrop-blur-md bg-background/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">

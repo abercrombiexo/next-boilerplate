@@ -1,4 +1,7 @@
-import { Hero } from "@/components/Hero/hero"
+import { sanityFetch } from '@/sanity/lib/live'
+import { HOME_PAGE_QUERY } from '@/sanity/queries'
+import { PageBuilder } from '@/components/PageBuilder/PageBuilder'
+import { Hero } from '@/components/Hero/hero'
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -19,7 +22,10 @@ const jsonLd = {
   },
 }
 
-export default function Home() {
+export default async function Home() {
+  const { data: page } = await sanityFetch({ query: HOME_PAGE_QUERY })
+  const blocks = page?.pageBuilder?.blocks ?? []
+
   return (
     <>
       <script
@@ -28,7 +34,7 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <Hero />
+      {blocks.length > 0 ? <PageBuilder blocks={blocks} /> : <Hero />}
     </>
   )
 }
